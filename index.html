@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>BSIS — Integrating Applications & Process Automation (50 Qs)</title>
+<style>
+  :root{font-family:Arial,Helvetica,sans-serif;color:#0f172a}
+  body{background:#f3f4f6;margin:0;padding:24px;line-height:1.45}
+  .wrap{max-width:980px;margin:0 auto}
+  header{display:flex;align-items:center;gap:16px;background:#fff;padding:14px;border-radius:10px;box-shadow:0 6px 18px rgba(2,6,23,.06)}
+  header h1{font-size:1.05rem;margin:0}
+  .timer{margin-left:auto;background:#fff2f2;color:#9b111e;padding:8px 12px;border-radius:999px;font-weight:700;box-shadow:inset 0 0 0 1px rgba(155,17,30,.06)}
+  .card{background:#fff;padding:18px;margin-top:18px;border-radius:10px;box-shadow:0 6px 18px rgba(2,6,23,.04)}
+  label{display:block;font-weight:700;margin-bottom:6px}
+  .meta{color:#6b7280;margin-bottom:12px}
+  select,input[type=text]{width:100%;padding:10px;border-radius:8px;border:1px solid #e5e7eb;margin-bottom:12px;font-size:0.95rem}
+  button{background:#1f6feb;color:#fff;padding:10px 14px;border-radius:10px;border:none;font-weight:700;cursor:pointer}
+  button.secondary{background:#eef2ff;color:#1f6feb}
+  .muted{color:#6b7280;font-size:.9rem}
+  .question{padding:12px;border-radius:8px;border:1px solid #eef2f5;margin-bottom:12px;background:#fbfcfe}
+  .qcase{font-weight:600;margin-bottom:8px}
+  .small{font-size:.92rem;color:#374151}
+  #submitMsg{display:none;margin-top:12px;padding:10px;border-radius:8px;background:#ecfdf5;color:#065f46;font-weight:700}
+  @media(min-width:800px){ header h1{font-size:1.15rem} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>BSIS Exam — Integrating Applications & Process Automation (50 Case-Based Qs)</h1>
+    <div class="timer" id="timer">35:00</div>
+  </header>
+
+  <div class="card" id="accessCodeSection">
+    <label>Enter Exam Access Code</label>
+    <input id="examCodeInput" type="text" placeholder="Enter access code (provided by instructor)" />
+    <div style="display:flex;gap:8px;align-items:center">
+      <button id="examCodeBtn">Start Exam</button>
+      <div class="muted" style="margin-left:auto">Access code required — contact your instructor</div>
+    </div>
+    <p id="codeError" class="muted" style="color:#b91c1c;display:none;margin-top:8px">Incorrect code. Try again.</p>
+  </div>
+
+  <form id="examForm" class="card" autocomplete="off" style="display:none">
+    <label>Student Name</label>
+    <input id="studentName" type="text" placeholder="Last name, First name" />
+
+    <p class="meta">Instructions: All questions are case-based or scenario-driven. Choose the most logical answer (A–D). No question ordering shuffle.</p>
+
+    <!-- QUESTIONS 1–50 (case-based) -->
+    <div id="questions">
+
+      <!-- 1 -->
+      <div class="question">
+        <div class="qcase">Case 1 — Retail integration</div>
+        <div class="small">A retail chain links POS, inventory, and accounting so a sale triggers stock decrement and immediate ledger update. Which integration level is primary?</div>
+        <label>1.</label>
+        <select name="q1">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. User Interface-Level Integration</option>
+          <option value="B">B. Data-Level Integration</option>
+          <option value="C">C. Business Process-Level Integration</option>
+          <option value="D">D. Legacy Integration</option>
+        </select>
+      </div>
+
+      <!-- 2 -->
+      <div class="question">
+        <div class="qcase">Case 2 — Legacy adapter</div>
+        <div class="small">A hospital exposes a mainframe patient record via an adapter that converts legacy calls to REST APIs so modern apps can fetch records. What is this?</div>
+        <label>2.</label>
+        <select name="q2">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Point-to-Point Integration</option>
+          <option value="B">B. Legacy Integration with an adapter</option>
+          <option value="C">C. File-Based Sync</option>
+          <option value="D">D. UI-Level Mashup</option>
+        </select>
+      </div>
+
+      <!-- 3 -->
+      <div class="question">
+        <div class="qcase">Case 3 — API-layering</div>
+        <div class="small">An airline organizes APIs into System, Process, and Experience layers to reuse endpoints across apps. What approach is this?</div>
+        <label>3.</label>
+        <select name="q3">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. ESB Architecture</option>
+          <option value="B">B. API-Led Integration</option>
+          <option value="C">C. Point-to-Point</option>
+          <option value="D">D. File-Based Integration</option>
+        </select>
+      </div>
+
+      <!-- 4 -->
+      <div class="question">
+        <div class="qcase">Case 4 — XML validation</div>
+        <div class="small">A supplier requires each order message be validated with an XSD before processing. Which XML best practice is applied?</div>
+        <label>4.</label>
+        <select name="q4">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Compression for performance</option>
+          <option value="B">B. Schema validation using XSD</option>
+          <option value="C">C. Obfuscation of tags</option>
+          <option value="D">D. Using XML only for human-readability</option>
+        </select>
+      </div>
+
+      <!-- 5 -->
+      <div class="question">
+        <div class="qcase">Case 5 — ESB performance tuning</div>
+        <div class="small">An ESB handles many synchronous transformations and becomes a bottleneck. Which optimization is best?</div>
+        <label>5.</label>
+        <select name="q5">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Replace ESB with file transfers</option>
+          <option value="B">B. Introduce asynchronous messaging and load balancing</option>
+          <option value="C">C. Hard-code endpoints for each service</option>
+          <option value="D">D. Disable monitoring to speed messages</option>
+        </select>
+      </div>
+
+      <!-- 6 -->
+      <div class="question">
+        <div class="qcase">Case 6 — Single sign-on portal</div>
+        <div class="small">A university portal lets students log in once to access enrollment, grades, and payment modules hosted separately. What integration type is most visible?</div>
+        <label>6.</label>
+        <select name="q6">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Data-Level Integration</option>
+          <option value="B">B. User Interface-Level Integration (single portal)</option>
+          <option value="C">C. File-Based Batch Integration</option>
+          <option value="D">D. Point-to-Point Sync</option>
+        </select>
+      </div>
+
+      <!-- 7 -->
+      <div class="question">
+        <div class="qcase">Case 7 — Transactional consistency</div>
+        <div class="small">A bank needs atomic updates across ledger and notifications. Which pattern helps ensure coordinated multi-system transactions?</div>
+        <label>7.</label>
+        <select name="q7">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Event-driven eventual consistency</option>
+          <option value="B">B. Two-phase commit / orchestration (process-level)</option>
+          <option value="C">C. Manual reconciliation</option>
+          <option value="D">D. Pure UI-level combination</option>
+        </select>
+      </div>
+
+      <!-- 8 -->
+      <div class="question">
+        <div class="qcase">Case 8 — Data mapping failure</div>
+        <div class="small">During integration, customer records show mismatched fields because source and target use different field names. What best practice fixes this?</div>
+        <label>8.</label>
+        <select name="q8">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Ignore mismatches and accept nulls</option>
+          <option value="B">B. Implement a canonical data model and explicit mapping/transformation</option>
+          <option value="C">C. Replace target schema to match each source</option>
+          <option value="D">D. Export to CSV and manually edit</option>
+        </select>
+      </div>
+
+      <!-- 9 -->
+      <div class="question">
+        <div class="qcase">Case 9 — IoT streaming</div>
+        <div class="small">Sensors send continuous readings to analytics in near-real-time via streaming APIs. Which integration style fits?</div>
+        <label>9.</label>
+        <select name="q9">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Batch ETL</option>
+          <option value="B">B. Real-time event-driven integration (streaming)</option>
+          <option value="C">C. UI mashup</option>
+          <option value="D">D. Legacy polling</option>
+        </select>
+      </div>
+
+      <!-- 10 -->
+      <div class="question">
+        <div class="qcase">Case 10 — Rate limiting</div>
+        <div class="small">A cloud API imposes rate limits. Which safeguard avoids service interruptions when limits are reached?</div>
+        <label>10.</label>
+        <select name="q10">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Circuit breaker with retry/backoff and caching</option>
+          <option value="B">B. Remove authentication to speed up calls</option>
+          <option value="C">C. Continuous parallel retries</option>
+          <option value="D">D. Increase request frequency</option>
+        </select>
+      </div>
+
+      <!-- 11 -->
+      <div class="question">
+        <div class="qcase">Case 11 — Hub-and-spoke normalization</div>
+        <div class="small">Multiple logistics partners send different formats; a central middleware normalizes them. Which strategy is shown?</div>
+        <label>11.</label>
+        <select name="q11">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Point-to-Point</option>
+          <option value="B">B. Hub-and-Spoke Integration</option>
+          <option value="C">C. Monolithic DB merge</option>
+          <option value="D">D. UI-level embedding</option>
+        </select>
+      </div>
+
+      <!-- 12 -->
+      <div class="question">
+        <div class="qcase">Case 12 — Audit logging</div>
+        <div class="small">A compliance system requires a tamper-proof log of all integration events. Which feature is essential?</div>
+        <label>12.</label>
+        <select name="q12">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Centralized immutable audit logs with timestamps</option>
+          <option value="B">B. Local temporary logs only</option>
+          <option value="C">C. Silent failure ignores</option>
+          <option value="D">D. Only UI notifications</option>
+        </select>
+      </div>
+
+      <!-- 13 -->
+      <div class="question">
+        <div class="qcase">Case 13 — Synchronous vs asynchronous</div>
+        <div class="small">A workflow triggers long-running reports. To avoid blocking callers, which pattern should be used?</div>
+        <label>13.</label>
+        <select name="q13">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Synchronous blocking call</option>
+          <option value="B">B. Asynchronous messaging with callback/status</option>
+          <option value="C">C. Polling every second</option>
+          <option value="D">D. Single-threaded processing</option>
+        </select>
+      </div>
+
+      <!-- 14 -->
+      <div class="question">
+        <div class="qcase">Case 14 — Data duplication risk</div>
+        <div class="small">Two systems each keep their own master copy of customer data, leading to different addresses. Which approach reduces duplication?</div>
+        <label>14.</label>
+        <select name="q14">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Master Data Management (central source of truth)</option>
+          <option value="B">B. Continue duplicate copies</option>
+          <option value="C">C. Ad-hoc CSV sync</option>
+          <option value="D">D. Remove data validation</option>
+        </select>
+      </div>
+
+      <!-- 15 -->
+      <div class="question">
+        <div class="qcase">Case 15 — API versioning</div>
+        <div class="small">A public API must change response structure; which strategy prevents breaking existing clients?</div>
+        <label>15.</label>
+        <select name="q15">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Version the API and maintain backward compatibility</option>
+          <option value="B">B. Change contract without notice</option>
+          <option value="C">C. Block old clients permanently</option>
+          <option value="D">D. Only update client code centrally</option>
+        </select>
+      </div>
+
+      <!-- 16 -->
+      <div class="question">
+        <div class="qcase">Case 16 — Security between tenants</div>
+        <div class="small">Multi-tenant integration shares a middleware; tenants must not access each other's data. Which is required?</div>
+        <label>16.</label>
+        <select name="q16">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Strong tenant isolation, token-based auth and RBAC</option>
+          <option value="B">B. Shared credentials for simplicity</option>
+          <option value="C">C. No encryption within network</option>
+          <option value="D">D. Sideloaded data files</option>
+        </select>
+      </div>
+
+      <!-- 17 -->
+      <div class="question">
+        <div class="qcase">Case 17 — Monitoring integration health</div>
+        <div class="small">You need to detect failed message flows quickly. Which capability helps most?</div>
+        <label>17.</label>
+        <select name="q17">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Real-time monitoring and alerts for failed transactions</option>
+          <option value="B">B. Manual log checks weekly</option>
+          <option value="C">C. No monitoring—trust system</option>
+          <option value="D">D. Print logs to paper</option>
+        </select>
+      </div>
+
+      <!-- 18 -->
+      <div class="question">
+        <div class="qcase">Case 18 — Deprecating legacy</div>
+        <div class="small">A project replaces a legacy system but wants to minimize disruption. What migration tactic reduces risk?</div>
+        <label>18.</label>
+        <select name="q18">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Strangler pattern (incremental replacement)</option>
+          <option value="B">B. Big-bang rip-and-replace</option>
+          <option value="C">C. Shut down legacy immediately</option>
+          <option value="D">D. Manual paper processes</option>
+        </select>
+      </div>
+
+      <!-- 19 -->
+      <div class="question">
+        <div class="qcase">Case 19 — Data latency requirement</div>
+        <div class="small">An operations dashboard requires near-instant inventory updates. Which integration guarantee should be targeted?</div>
+        <label>19.</label>
+        <select name="q19">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Near real-time with event-driven streams</option>
+          <option value="B">B. Nightly batch ETL</option>
+          <option value="C">C. Weekly sync</option>
+          <option value="D">D. Manual reconciliation</option>
+        </select>
+      </div>
+
+      <!-- 20 -->
+      <div class="question">
+        <div class="qcase">Case 20 — Transaction retry</div>
+        <div class="small">A payment API occasionally times out. What retry policy is safest?</div>
+        <label>20.</label>
+        <select name="q20">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Exponential backoff with idempotency keys</option>
+          <option value="B">B. Immediate repeated retries without limits</option>
+          <option value="C">C. No retries—fail silently</option>
+          <option value="D">D. Retry forever</option>
+        </select>
+      </div>
+
+      <!-- 21 -->
+      <div class="question">
+        <div class="qcase">Case 21 — Transformation responsibility</div>
+        <div class="small">Where should heavy data transformations (format mapping) ideally occur?</div>
+        <label>21.</label>
+        <select name="q21">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. At the integration/middleware layer</option>
+          <option value="B">B. In every client application</option>
+          <option value="C">C. In user interface code</option>
+          <option value="D">D. Only in the target DB via triggers</option>
+        </select>
+      </div>
+
+      <!-- 22 -->
+      <div class="question">
+        <div class="qcase">Case 22 — Data contract enforcement</div>
+        <div class="small">APIs must enforce agreed payloads to avoid downstream errors. Best mechanism?</div>
+        <label>22.</label>
+        <select name="q22">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Use schema validation at gateway and version contracts</option>
+          <option value="B">B. Let clients send any payload</option>
+          <option value="C">C. Convert at client side only</option>
+          <option value="D">D. No validation</option>
+        </select>
+      </div>
+
+      <!-- 23 -->
+      <div class="question">
+        <div class="qcase">Case 23 — High availability</div>
+        <div class="small">An integration hub must not be a single point of failure. Which design increases availability?</div>
+        <label>23.</label>
+        <select name="q23">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Horizontal redundancy and stateless processing</option>
+          <option value="B">B. Single server with local backups</option>
+          <option value="C">C. Manual failover only</option>
+          <option value="D">D. Turn off monitoring</option>
+        </select>
+      </div>
+
+      <!-- 24 -->
+      <div class="question">
+        <div class="qcase">Case 24 — Minimal coupling</div>
+        <div class="small">Team wants integrations that allow independent deployment of services. Which style supports this most?</div>
+        <label>24.</label>
+        <select name="q24">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Loosely coupled APIs with clear contracts</option>
+          <option value="B">B. Tight point-to-point dependencies</option>
+          <option value="C">C. Shared monolithic DB coupling</option>
+          <option value="D">D. Integrated UI only</option>
+        </select>
+      </div>
+
+      <!-- 25 -->
+      <div class="question">
+        <div class="qcase">Case 25 — Data privacy</div>
+        <div class="small">Customer PII flows between systems. What is essential for compliance?</div>
+        <label>25.</label>
+        <select name="q25">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Encryption in transit and at rest, access controls, and auditing</option>
+          <option value="B">B. Plain text logs</option>
+          <option value="C">C. Public APIs with no auth</option>
+          <option value="D">D. No record retention</option>
+        </select>
+      </div>
+
+      <!-- ===== Process Automation / RPA / AI questions 26-50 ===== -->
+
+      <!-- 26 -->
+      <div class="question">
+        <div class="qcase">Case 26 — RPA definition</div>
+        <div class="small">RPA bots are used to automate repetitive GUI tasks (clicks, copy/paste, form filling). What best describes RPA?</div>
+        <label>26.</label>
+        <select name="q26">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Software robots that mimic human actions on existing apps (rule-based)</option>
+          <option value="B">B. A human-only manual process</option>
+          <option value="C">C. A hardware robot for moving goods</option>
+          <option value="D">D. A database replication tool</option>
+        </select>
+      </div>
+
+      <!-- 27 -->
+      <div class="question">
+        <div class="qcase">Case 27 — RPA vs AI</div>
+        <div class="small">Which statement best differentiates RPA from AI in BPM?</div>
+        <label>27.</label>
+        <select name="q27">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. RPA follows deterministic rules; AI adds learning/prediction capabilities</option>
+          <option value="B">B. RPA learns from data while AI only follows scripts</option>
+          <option value="C">C. Both are identical in purpose and tech</option>
+          <option value="D">D. AI is only for UI automation</option>
+        </select>
+      </div>
+
+      <!-- 28 -->
+      <div class="question">
+        <div class="qcase">Case 28 — RPA use-case selection</div>
+        <div class="small">Which process is most suitable for RPA?</div>
+        <label>28.</label>
+        <select name="q28">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. High-volume, repetitive, rule-based tasks with stable inputs</option>
+          <option value="B">B. Tasks requiring complex judgment and creativity</option>
+          <option value="C">C. One-off data migrations with lots of exceptions</option>
+          <option value="D">D. Unstructured decision making</option>
+        </select>
+      </div>
+
+      <!-- 29 -->
+      <div class="question">
+        <div class="qcase">Case 29 — AI application in BPM</div>
+        <div class="small">Where is AI most valuable in BPM?</div>
+        <label>29.</label>
+        <select name="q29">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Replacing RPA for simple form fill only</option>
+          <option value="B">B. Predictive analytics, classification, and NLP for decisions</option>
+          <option value="C">C. Only for UI color changes</option>
+          <option value="D">D. For deleting records automatically</option>
+        </select>
+      </div>
+
+      <!-- 30 -->
+      <div class="question">
+        <div class="qcase">Case 30 — Cognitive automation</div>
+        <div class="small">Combining RPA with AI (e.g., OCR + ML) to handle semi-structured invoices is called:</div>
+        <label>30.</label>
+        <select name="q30">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Basic scripting</option>
+          <option value="B">B. Robotic hardware integration</option>
+          <option value="C">C. Cognitive automation / Intelligent Automation</option>
+          <option value="D">D. Manual processing</option>
+        </select>
+      </div>
+
+      <!-- 31 -->
+      <div class="question">
+        <div class="qcase">Case 31 — Main benefit</div>
+        <div class="small">Which is a primary benefit of process automation?</div>
+        <label>31.</label>
+        <select name="q31">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Reduced manual effort and fewer human errors</option>
+          <option value="B">B. Increased manual paperwork</option>
+          <option value="C">C. Lower accuracy due to automation</option>
+          <option value="D">D. Slower processing times</option>
+        </select>
+      </div>
+
+      <!-- 32 -->
+      <div class="question">
+        <div class="qcase">Case 32 — Employee resistance</div>
+        <div class="small">Which is a common non-technical challenge when adopting automation?</div>
+        <label>32.</label>
+        <select name="q32">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. No challenges at all</option>
+          <option value="B">B. Employee fear/resistance and need for change management</option>
+          <option value="C">C. Hardware failures only</option>
+          <option value="D">D. Unlimited budgets</option>
+        </select>
+      </div>
+
+      <!-- 33 -->
+      <div class="question">
+        <div class="qcase">Case 33 — Implementation first step</div>
+        <div class="small">Before building bots, what should you do?</div>
+        <label>33.</label>
+        <select name="q33">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Process discovery and mapping to identify suitable candidates</option>
+          <option value="B">B. Randomly automate any screen</option>
+          <option value="C">C. Automate without stakeholder input</option>
+          <option value="D">D. Replace all staff</option>
+        </select>
+      </div>
+
+      <!-- 34 -->
+      <div class="question">
+        <div class="qcase">Case 34 — Bot maintenance</div>
+        <div class="small">After deployment, RPA bots need monitoring because apps change. What is required?</div>
+        <label>34.</label>
+        <select name="q34">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Ongoing monitoring, maintenance, and test updates</option>
+          <option value="B">B. No maintenance</option>
+          <option value="C">C. Only initial deployment then ignore</option>
+          <option value="D">D. Manual restarts only once a year</option>
+        </select>
+      </div>
+
+      <!-- 35 -->
+      <div class="question">
+        <div class="qcase">Case 35 — Credentials for bots</div>
+        <div class="small">Bots need to access systems securely. Which is best practice?</div>
+        <label>35.</label>
+        <select name="q35">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Use secure vaults for credentials and least privilege</option>
+          <option value="B">B">B. Hard-code passwords in scripts</option>
+          <option value="C">C. Share admin credentials with all bots</option>
+          <option value="D">D. Use no authentication</option>
+        </select>
+      </div>
+
+      <!-- 36 -->
+      <div class="question">
+        <div class="qcase">Case 36 — RPA orchestration</div>
+        <div class="small">To coordinate many bots and queues, what is needed?</div>
+        <label>36.</label>
+        <select name="q36">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Central orchestration/control center and queueing</option>
+          <option value="B">B">B. Manual start of each bot only</option>
+          <option value="C">C. Independent unmanaged scripts</option>
+          <option value="D">D. No coordination</option>
+        </select>
+      </div>
+
+      <!-- 37 -->
+      <div class="question">
+        <div class="qcase">Case 37 — Exception handling</div>
+        <div class="small">A bot encounters unexpected input. How should this be handled?</div>
+        <label>37.</label>
+        <select name="q37">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Escalate to human-in-the-loop and log the exception</option>
+          <option value="B">B">B. Ignore and continue</option>
+          <option value="C">C. Delete input silently</option>
+          <option value="D">D. Crash the system</option>
+        </select>
+      </div>
+
+      <!-- 38 -->
+      <div class="question">
+        <div class="qcase">Case 38 — Scaling bots</div>
+        <div class="small">Which pattern helps scale RPA for high throughput?</div>
+        <label>38.</label>
+        <select name="q38">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Queue-based workload distribution and elasticity</option>
+          <option value="B">B">B. Single bot per server</option>
+          <option value="C">C. Manual parallelization only</option>
+          <option value="D">D. No scaling</option>
+        </select>
+      </div>
+
+      <!-- 39 -->
+      <div class="question">
+        <div class="qcase">Case 39 — AI model bias</div>
+        <div class="small">When using ML in BPM, how do you reduce model bias?</div>
+        <label>39.</label>
+        <select name="q39">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Curate representative training data and audit models</option>
+          <option value="B">B">B. Use only small biased datasets</option>
+          <option value="C">C. Ignore evaluation</option>
+          <option value="D">D. Hard-code outputs</option>
+        </select>
+      </div>
+
+      <!-- 40 -->
+      <div class="question">
+        <div class="qcase">Case 40 — Measuring ROI</div>
+        <div class="small">Which KPI best shows RPA/automation ROI?</div>
+        <label>40.</label>
+        <select name="q40">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Time saved, error reduction, and cost per transaction</option>
+          <option value="B">B">B. Number of bots only</option>
+          <option value="C">C. CPU utilization only</option>
+          <option value="D">D. Amount of manual approvals</option>
+        </select>
+      </div>
+
+      <!-- 41 -->
+      <div class="question">
+        <div class="qcase">Case 41 — Process selection</div>
+        <div class="small">Which process would you prioritize for automation first?</div>
+        <label>41.</label>
+        <select name="q41">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Repetitive, high-volume, rule-based and stable processes</option>
+          <option value="B">B">B. Creative brainstorming tasks</option>
+          <option value="C">C. Highly variable exception-driven tasks</option>
+          <option value="D">D. One-off projects</option>
+        </select>
+      </div>
+
+      <!-- 42 -->
+      <div class="question">
+        <div class="qcase">Case 42 — When not to use RPA</div>
+        <div class="small">Which scenario is NOT a good candidate for RPA?</div>
+        <label>42.</label>
+        <select name="q42">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Tasks needing complex human judgment and frequent changes</option>
+          <option value="B">B">B. Repetitive form filling</option>
+          <option value="C">C. Stable report generation</option>
+          <option value="D">D. Mass data migration with deterministic rules</option>
+        </select>
+      </div>
+
+      <!-- 43 -->
+      <div class="question">
+        <div class="qcase">Case 43 — NLP use-case</div>
+        <div class="small">Which application is best for NLP in BPM?</div>
+        <label>43.</label>
+        <select name="q43">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Customer support chatbots </option>
+          <option value="B">B">B. Static image compression</option>
+          <option value="C">C. Database index tuning</option>
+          <option value="D">D. Manual phone calls</option>
+        </select>
+      </div>
+
+      <!-- 44 -->
+      <div class="question">
+        <div class="qcase">Case 44 — Observability for AI</div>
+        <div class="small">Which practice helps detect model drift in production?</div>
+        <label>44.</label>
+        <select name="q44">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Monitor model performance metrics </option>
+          <option value="B">B">B. No monitoring after deploy</option>
+          <option value="C">C. Only monitor infra CPU</option>
+          <option value="D">D. Manual monthly checks</option>
+        </select>
+      </div>
+
+      <!-- 45 -->
+      <div class="question">
+        <div class="qcase">Case 45 — Governance</div>
+        <div class="small">Which governance is required for enterprise automation?</div>
+        <label>45.</label>
+        <select name="q45">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Change control, access policy, audit logging, and ownership</option>
+          <option value="B">B">B. No governance</option>
+          <option value="C">C. Only annual reviews</option>
+          <option value="D">D. Ad-hoc changes without documentation</option>
+        </select>
+      </div>
+
+      <!-- 46 -->
+      <div class="question">
+        <div class="qcase">Case 46 — Data for ML</div>
+        <div class="small">What data is essential to train supervised ML for BPM predictions?</div>
+        <label>46.</label>
+        <select name="q46">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Labeled historical data </option>
+          <option value="B">B">B. Random unlabeled data only</option>
+          <option value="C">C. No data at all</option>
+          <option value="D">D. Only synthetic useless examples</option>
+        </select>
+      </div>
+
+      <!-- 47 -->
+      <div class="question">
+        <div class="qcase">Case 47 — Hybrid automation</div>
+        <div class="small">Best design to combine UI-driven bots with modern back-end systems?</div>
+        <label>47.</label>
+        <select name="q47">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Use RPA for UI tasks </option>
+          <option value="B">B">B. Only RPA for everything</option>
+          <option value="C">C. Only change backend and keep UIs unchanged</option>
+          <option value="D">D. Avoid any integration</option>
+        </select>
+      </div>
+
+      <!-- 48 -->
+      <div class="question">
+        <div class="qcase">Case 48 — Compliance & traceability</div>
+        <div class="small">For audit purposes of an automated payroll, what must be present?</div>
+        <label>48.</label>
+        <select name="q48">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Detailed logs, versioned rules</option>
+          <option value="B">B">B. No logs</option>
+          <option value="C">C. Only screenshots without context</option>
+          <option value="D">D. Paper receipts only</option>
+        </select>
+      </div>
+
+      <!-- 49 -->
+      <div class="question">
+        <div class="qcase">Case 49 — Testing bots</div>
+        <div class="small">Before production, where should bot testing occur?</div>
+        <label>49.</label>
+        <select name="q49">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. In a staging environment with synthetic</option>
+          <option value="B">B">B. Directly on production with live customers</option>
+          <option value="C">C. No testing</option>
+          <option value="D">D. Random notebook tests only</option>
+        </select>
+      </div>
+
+      <!-- 50 -->
+      <div class="question">
+        <div class="qcase">Case 50 — Automation strategy</div>
+        <div class="small">Given limited budget, high compliance needs, and many legacy endpoints — which gradual strategy balances risk and cost?</div>
+        <label>50.</label>
+        <select name="q50">
+          <option value="">-- Select Answer --</option>
+          <option value="A">A. Strangler pattern + API-led adapters </option>
+          <option value="B">B">B. Complete immediate rip-and-replace</option>
+          <option value="C">C. Stop all integrations</option>
+          <option value="D">D">D. Manual Excel processes forever</option>
+        </select>
+      </div>
+
+    </div>
+
+    <div style="display:flex;gap:10px;align-items:center;margin-top:10px">
+      <button type="submit" id="submitBtn">Submit Answers</button>
+      <button type="button" id="downloadBtn" class="secondary" disabled>Download Results (.txt)</button>
+      <div style="margin-left:auto" class="muted">Make sure name is filled before submit.</div>
+    </div>
+
+    <div id="submitMsg"></div>
+  </form>
+</div>
+
+<script>
+(function(){
+  // === Config
+  const ACCESS_CODE = "IKAWBAHALA2025";
+  const PASS_PERCENT = 80;
+  const START_SECONDS = 35 * 60;
+  let totalSeconds = START_SECONDS, timerInterval = null, examStarted = false;
+
+  // === Correct answers for Q1..Q50
+  const correctAnswers = [
+    // 1-25 Integration
+    "C","B","B","B","B","B","B","B","B","A",
+    "B","A","B","A","A","A","A","A","A","A",
+    "A","A","A","A","A",
+    // 26-50 Process Automation / RPA / AI
+    "A","A","A","B","C","A","B","A","A","A",
+    "A","A","A","A","A","A","A","A","A","A",
+    "A","A","A","A","A"
+  ];
+
+  // === Elements
+  const timerEl = document.getElementById('timer');
+  const examForm = document.getElementById('examForm');
+  const accessSection = document.getElementById('accessCodeSection');
+  const examCodeBtn = document.getElementById('examCodeBtn');
+  const examCodeInput = document.getElementById('examCodeInput');
+  const codeError = document.getElementById('codeError');
+  const downloadBtn = document.getElementById('downloadBtn');
+  const submitMsg = document.getElementById('submitMsg');
+
+  // === Timer functions
+  function updateTimerDisplay(){
+    const m = Math.floor(totalSeconds/60);
+    const s = totalSeconds % 60;
+    timerEl.textContent = (m<10? '0'+m : m) + ':' + (s<10? '0'+s : s);
+  }
+  function startTimer(){
+    clearInterval(timerInterval);
+    timerInterval = setInterval(()=>{
+      totalSeconds--;
+      if(totalSeconds <= 0){
+        clearInterval(timerInterval);
+        lockExam();
+        return;
+      }
+      updateTimerDisplay();
+    },1000);
+  }
+  function lockExam(){
+    examForm.querySelectorAll('select,input').forEach(el => el.disabled = true);
+    submitMsg.style.display = 'block';
+    submitMsg.textContent = '⏰ Time is up! Auto-submitting your answers...';
+    // Small delay so message can appear, then submit
+    setTimeout(()=> submitAnswers(true), 700);
+  }
+
+  // === Anti-cheat
+  document.addEventListener('contextmenu', e => e.preventDefault());
+  document.addEventListener('copy', e => e.preventDefault());
+  document.addEventListener('cut', e => e.preventDefault());
+  document.addEventListener('selectstart', e => e.preventDefault());
+  document.addEventListener('keydown', e => {
+    if((e.ctrlKey || e.metaKey) && ['c','x','u','s','a','p'].includes(e.key.toLowerCase())) e.preventDefault();
+  });
+
+  function resetExam(reason){
+    if(!examStarted) return;
+    alert('Exam reset due to ' + reason + '. The page will reload.');
+    location.reload();
+  }
+  document.addEventListener('visibilitychange', ()=> { if(document.hidden && examStarted) resetExam('tab change'); });
+  window.addEventListener('blur', ()=> { if(examStarted) resetExam('window minimize or focus loss'); });
+
+  // === Access code start
+  examCodeBtn.addEventListener('click', function(){
+    if((examCodeInput.value || '').trim() === ACCESS_CODE){
+      codeError.style.display = 'none';
+      accessSection.style.display = 'none';
+      examForm.style.display = 'block';
+      examStarted = true;
+      totalSeconds = START_SECONDS;
+      updateTimerDisplay();
+      startTimer();
+    } else {
+      codeError.style.display = 'block';
+    }
+  });
+  examCodeInput.addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){ e.preventDefault(); examCodeBtn.click(); }
+  });
+
+  // === Submission
+  examForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = (document.getElementById('studentName').value || '').trim();
+    if(!name){ alert('Please enter your name before submitting.'); return; }
+    submitAnswers(false);
+  });
+
+  function submitAnswers(isTimeout){
+    clearInterval(timerInterval);
+    examStarted = false;
+    const name = (document.getElementById('studentName').value || '').trim() || 'UNKNOWN';
+    const total = correctAnswers.length;
+    let correct = 0;
+    const report = [];
+
+    report.push('Student: ' + name);
+    report.push('Timestamp: ' + new Date().toLocaleString());
+    report.push('');
+
+    for(let i=1;i<=total;i++){
+      const sel = examForm.querySelector('[name=q' + i + ']');
+      const chosen = sel && sel.value ? sel.value : '';
+      const correctLetter = correctAnswers[i-1] || '';
+      const chosenText = sel ? (sel.options[sel.selectedIndex] ? sel.options[sel.selectedIndex].text : '') : '';
+      // find correct option text
+      let correctText = '';
+      if(sel){
+        for(let k=0;k<sel.options.length;k++){
+          if(sel.options[k].value === correctLetter){ correctText = sel.options[k].text; break; }
+        }
+      }
+      const isCorrect = chosen === correctLetter;
+      if(isCorrect) correct++;
+      report.push('Q' + i + ': ' + (isCorrect? '✅' : '❌') + ' Your: ' + (chosenText || '(blank)') + ' | Correct: ' + (correctText || '(not found)'));
+    }
+
+    const percent = Math.round((correct/total)*100);
+    const passed = percent >= PASS_PERCENT;
+    report.push('');
+    report.push('Score: ' + correct + '/' + total + ' (' + percent + '%)');
+    report.push('Result: ' + (passed ? 'PASSED ✅' : 'FAILED ❌'));
+
+    // UI feedback: show both raw score and percentage
+    submitMsg.style.display = 'block';
+    submitMsg.textContent = 'Exam submitted. Score: ' + correct + '/' + total + ' (' + percent + '%) — ' + (passed ? 'PASSED ✅' : 'FAILED ❌');
+
+    // Prepare downloadable file
+    const blob = new Blob([report.join('\n')], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    downloadBtn.disabled = false;
+    downloadBtn.onclick = function(){
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = (name.replace(/\s+/g,'_') || 'answers') + '_results.txt';
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(()=>{ URL.revokeObjectURL(url); a.remove(); },3000);
+    };
+
+    // disable form after submission to prevent re-submit tampering (but keep download enabled)
+    examForm.querySelectorAll('select,input,button').forEach(el => {
+      if(el !== downloadBtn) el.disabled = true;
+    });
+  }
+
+  // initial display
+  updateTimerDisplay();
+})();
+</script>
+</body>
+</html>
